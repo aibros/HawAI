@@ -1,90 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>HawAI Detector</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Use the power of Machine Learning to analyze pizzas.">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/styles.css">
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul class="nav justify-content-center">
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Proč?</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">Test</a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#">O nás</a>
-					</li>
-				  </ul>
-			</nav>
-		</header>
-		<main role="main" class="container mt-5">
-			<div class="row">
-				<div class="col-12">
-					<h2>Proč?</h2>
-					<p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
-				</div>
-			</div>
+<head>
+    <meta charset="utf-8">
+    <title>HawAI Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Use the power of Machine Learning to analyze pizzas.">
 
-			<div class="row">
-				<div class="col-12">
-					<div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
-				</div>
-			</div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-			<div class="row">
-				<div class="col-6">
-					<input id="image-selector" class="form-control border-0" type="file">
-				</div>
-				<div class="col-6">
-					<button id="predict-button" class="btn btn-primary float-right">Analyze</button>
-				</div>
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col-6">
-					<h2 class="ml-3">Image</h2>
-					<img id="selected-image" class="ml-3" width="250" alt=""> 
-				</div>
-				<div class="col-6">
-					<h2 class="ml-3">Predictions</h2>
-					<div id="prediction-list"></div>
-				</div>
-			</div>
+<body>
+    <header>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Proč?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">O nás</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main role="main" class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Proč?</h2>
+                <p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget
+                    nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante.
+                    Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
+            </div>
+        </div>
 
-			<div class="row">
-				<div class="col-12">
-					<h2>O nás</h2>
-					<p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
-				</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
+            </div>
+        </div>
 
-				<div class="col-6 profile">
-					<h3>Michal Kučera</h3>
-					<p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
-					<div class="socials"></div>
-				</div>
+        <div class="row">
+            <div class="col-6">
+                <input id="image-selector" class="form-control border-0" type="file">
+            </div>
+            <div class="col-6">
+                <button id="predict-button" class="btn btn-primary float-right">Analyze</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <h2 class="ml-3">Image</h2>
+                <img id="selected-image" class="ml-3" width="250" alt="">
+            </div>
+            <div class="col-6">
+                <h2 class="ml-3">Predictions</h2>
+                <div id="prediction-list"></div>
+            </div>
+        </div>
 
-				<div class="col-6 profile">
-					<h3>Filip Troníček</h3>
-					<p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
-					<div class="socials"></div>
-				</div>
-			</div>
-		</main>
+        <div class="row">
+            <div class="col-12">
+                <h2>O nás</h2>
+                <p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget
+                    nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante.
+                    Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
+            </div>
 
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+            <div class="col-xs-12 col-sm-12 col-md-6 profile margin-bottom text-center">
+                <img src="images/Kucera_profile.jpg" class="rounded-circle img-thumbnail profile-photo" alt="Michal Kučera">
+                <h3>Michal Kučera</h3>
+                <p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget
+                    nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante.
+                    Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
+                <div class="socials">
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-github"></a>
+                </div>
+            </div>
 
-		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.2/dist/tf.min.js"></script>
-		<script src="target_classes.js"></script>
-		<script src="predict.js"></script> 
-	</body>
+            <div class="col-xs-12 col-sm-12 col-md-6 profile text-center">
+                <img src="images/Tronicek_profile.jpg" class="rounded-circle img-thumbnail profile-photo" alt="Filip Tronicek">
+                <h3>Filip Troníček</h3>
+                <p>orem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus rhoncus. Etiam dictum tincidunt diam. Etiam posuere lacus quis dolor. Curabitur bibendum justo non orci. Fusce suscipit libero eget elit. Phasellus rhoncus. Nullam eget
+                    nisl. Proin in tellus sit amet nibh dignissim sagittis. Nam sed tellus id magna elementum tincidunt. Maecenas libero. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante.
+                    Aenean placerat. Cras elementum. Nunc tincidunt ante vitae massa. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Donec vitae arcu. Curabitur sagittis hendrerit ante. Mauris tincidunt sem sed arcu. </p>
+                <div class="socials">
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-github"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.2/dist/tf.min.js"></script>
+    <script src="target_classes.js"></script>
+    <script src="predict.js"></script>
+</body>
+
 </html>
