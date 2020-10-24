@@ -1,6 +1,10 @@
 body {
     margin: 0;
-    background: url('./images/background.png');
+    background: url("../images/pizza_bc_mini.png");
+}
+
+main, header {
+    background-color: #ef8d3d;
 }
 
 .bd-placeholder-img {
