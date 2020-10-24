@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background: url("../images/pizza_bc_mini.png");
+    cursor: url("http://www.rw-designer.com/cursor-extern.php?id=79446"), default;
     font-family: cursive;
     color: white;
 }
